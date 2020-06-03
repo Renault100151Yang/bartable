@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/echarts/dist/echarts.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <style>
+        .bartable{
+            width:700px;
+            height: 800px;
+            margin: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bartable"></div>
+    <script>
+     
+var option = {
+    title:{
+        text:"衣服", // 图标标题
+    },
+    legend:{
+        data:["哈哈","销量"] // 指定数据名称
+    },
+    xAxis:{
+        data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"] // x坐标数据
+    },
+    yAxis:{},
+    series:[
+        {
+            name:"哈哈", // 对应的数据名称
+            type:"bar", // 柱状图
+            data:[5,20,36,10,10,20] // 每个x坐标数据的百分比数据
+        },
+        {
+            name:"销量",
+            type:"bar",
+            data:[90,80,70,85,85,80]
+        }
+    ],
+}
+
+        var   mayBe=echarts.init(document.querySelector(".bartable"));
+      mayBe.setOption(option)
+    </script>
+</body>
+</html>
